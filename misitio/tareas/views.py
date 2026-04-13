@@ -11,9 +11,4 @@ def inicio(request):
         "Leer un libro"
     ]
 
-    texto = "<h1>Lista de tareas</h1>"
-
-    for tarea in tareas:
-        texto += f"<p>{tarea}</p>"
-
-    return HttpResponse(texto)
+    return render(request, "inicio.html", {"tareas": tareas})
